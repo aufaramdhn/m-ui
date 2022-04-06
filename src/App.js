@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from "@mui/material";
+import Leftbar from "./components/Leftbar";
+import Navbar from "./components/Navbar";
+import Rightbar from "./components/Rightbar";
+import Feed from "./components/Feed";
+import { createTheme } from "@mui/material/styles";
+import Add from "./components/Add";
 
-function App() {
+const App = () => {
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 600,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <Navbar />
+      <Grid container>
+        <Grid item sm={2} xs={2}>
+          <Leftbar />
+        </Grid>
+        <Grid item sm={7} xs={10}>
+          <Feed />
+        </Grid>
+        <Grid
+          item
+          sm={3}
+          sx={{ [theme.breakpoints.down("sm")]: { display: "none" } }}
         >
-          Learn React
-        </a>
-      </header>
+          <Rightbar />
+        </Grid>
+      </Grid>
+      <Add />
     </div>
   );
-}
+};
 
 export default App;
