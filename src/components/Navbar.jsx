@@ -1,14 +1,5 @@
 import { Mail, Search } from "@mui/icons-material";
-import {
-  AppBar,
-  InputBase,
-  Toolbar,
-  Typography,
-  Badge,
-  Avatar,
-  Box,
-  alpha,
-} from "@mui/material";
+import { AppBar, InputBase, Toolbar, Typography, Badge, Avatar, Box, alpha } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import "./Navbar.css";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -88,8 +79,8 @@ const Navbar = () => {
             },
           }}
         >
-          <Search color={colorTheme.palette.white} />
-          <InputBase placeholder="Search..." sx={{ marginLeft: 2 }} />
+          <Search color={colorTheme.palette.white} sx={{ marginLeft: 2 }} />
+          <InputBase placeholder="Search..." sx={{ marginLeft: 2, width: "100%" }} />
           <CancelIcon
             sx={{
               [theme.breakpoints.up("sm")]: {
@@ -121,10 +112,7 @@ const Navbar = () => {
           <Badge badgeContent={4} color="secondary" sx={{ marginRight: 2 }}>
             <NotificationsIcon color="white" />
           </Badge>
-          <Avatar
-            alt="Remy Sharp"
-            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          />
+          <Avatar alt="Remy Sharp" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
         </Box>
       </Toolbar>
     </AppBar>
